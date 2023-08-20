@@ -4777,8 +4777,8 @@ void dlfree(void* mem) {
      free chunks, if they exist, and then place in a bin.  Intermixed
      with special cases for top, dv, mmapped chunks, and usage errors.
      */
-    
     if (mem != 0) {
+            printf("dlfree ptr: 0x%p",mem);
 #if __EMSCRIPTEN__
         /* XXX Emscripten Tracing API. */
         emscripten_trace_record_free(mem);
