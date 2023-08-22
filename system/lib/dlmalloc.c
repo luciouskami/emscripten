@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include <stdio.h>
 /* XXX Emscripten XXX */
 #if __EMSCRIPTEN__
 // When building for wasm we export `malloc` and `emscripten_builtin_malloc` as
@@ -4777,8 +4778,10 @@ void dlfree(void* mem) {
      free chunks, if they exist, and then place in a bin.  Intermixed
      with special cases for top, dv, mmapped chunks, and usage errors.
      */
+    
     if (mem != 0) {
-            printf("111111111111 dlfree ptr: 0x%p",mem);
+        printf("222222222222222");
+        printf("111111111111 dlfree ptr: 0x%p",mem);
 #if __EMSCRIPTEN__
         /* XXX Emscripten Tracing API. */
         emscripten_trace_record_free(mem);
