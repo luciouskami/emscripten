@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 /* XXX Emscripten XXX */
 #if __EMSCRIPTEN__
 // When building for wasm we export `malloc` and `emscripten_builtin_malloc` as
@@ -622,6 +620,8 @@ _Static_assert(MALLOC_ALIGNMENT == 8, "max_align_t must be 8");
 #endif /*MMAP_CLEARS */
 #endif  /* WIN32 */
 
+#include <stdlib.h>
+#include <stdio.h>
 #if defined(DARWIN) || defined(_DARWIN)
 /* Mac OSX docs advise not to use sbrk; it seems better to use mmap */
 #ifndef HAVE_MORECORE
