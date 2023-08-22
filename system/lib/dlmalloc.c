@@ -4780,8 +4780,7 @@ void dlfree(void* mem) {
      */
     
     if (mem != 0) {
-        printf("222222222222222");
-        printf("111111111111 dlfree ptr: 0x%p",mem);
+            fprintf(stderr, "max system bytes = 0x%p\n", mem);
 #if __EMSCRIPTEN__
         /* XXX Emscripten Tracing API. */
         emscripten_trace_record_free(mem);
